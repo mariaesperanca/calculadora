@@ -4,24 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" </head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
-    <div class="area">
-        <div class="container">
-            <h1> Calculadora</h1>
-            <div class="input_area">
-                <h2>Altura (cm):</h2>
-                <input id="altura" type="number">
-            </div>
-            <div class="input_area">
-                <h2>Peso (kg): </h2>
-                <input id="peso" type="number">
-            </div>
-            <button onclick="calcularImc()">Calcular</button>
+    <div class="container">
+        <form class="calculadora" name="calculadora">
+            <input type="text" readonly class="value" name="txt" />
+            <span class="num clear" onclick="calculadora.txt.value = ''">C</span>
+            <span class="num" onclick="document.calculadora.txt.value +='/'">/</span>
+            <span class="num" onclick="document.calculadora.txt.value +='*'">*</span>
+            <span class="num" onclick="document.calculadora.txt.value +='7'">7</span>
+            <span class="num" onclick="document.calculadora.txt.value +='8'">8</span>
+            <span class="num" onclick="document.calculadora.txt.value +='9'">9</span>
+            <span class="num" onclick="document.calculadora.txt.value +='-'">-</span>
+            <span class="num" onclick="document.calculadora.txt.value +='4'">4</span>
+            <span class="num" onclick="document.calculadora.txt.value +='5'">5</span>
+            <span class="num" onclick="document.calculadora.txt.value +='6'">6</span>
+            <span class="num plus" onclick="document.calculadora.txt.value +='+'">+</span>
+            <span class="num" onclick="document.calculadora.txt.value +='1'">1</span>
+            <span class="num" onclick="document.calculadora.txt.value +='2'">2</span>
+            <span class="num" onclick="document.calculadora.txt.value +='3'">3</span>
+            <span class="num" onclick="document.calculadora.txt.value +='0'">0</span>
+            <span class="num" onclick="document.calculadora.txt.value +='00'">00</span>
+            <span class="num" onclick="document.calculadora.txt.value +='.'">.</span>
 
+            <span class="num equal" onclick="document.calculadora.txt.value = eval(calculadora.txt.value)">=</span>
 
+        </form>
+
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+            <script type="text/javascript">
+                VanillaTilt.init(document.querySelector(".container"), {
+                    max: 25,
+                    speed: 400,
+                    glare: true
+                });
+
+                //It also supports NodeList
+                VanillaTilt.init(document.querySelectorAll(".container"));
+            </script>
+
+    </div>
 </body>
 
 </html>
